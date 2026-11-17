@@ -167,6 +167,7 @@
       renderMaps();
     }
     el.classList.add("on");
+    if (id === "mMaps") drawMaps();
     CDM.st.mode = "modal";
     focusFirstInModal(id);
   }
@@ -1136,7 +1137,11 @@
     $("mBackBtn").onclick = function() { goBackFromModal(); };
     bindGlobalNav($("maps"));
 
-    thumb($("mTh"), m, 8);
+    var stageEl = $("mStage");
+    var sw = (stageEl && stageEl.clientWidth > 40) ? (stageEl.clientWidth - 8) : Math.min(innerWidth * 0.45, 520);
+    var sh = (stageEl && stageEl.clientHeight > 40) ? (stageEl.clientHeight - 8) : Math.min(innerHeight * 0.45, 360);
+    var bestScale = Math.max(4, Math.floor(Math.min(sw / m.w, sh / m.h)));
+    thumb($("mTh"), m, bestScale);
 
     $("mP").onclick = function() { moveMapSelection(-1); };
     $("mN").onclick = function() { moveMapSelection(1); };
