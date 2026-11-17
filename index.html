@@ -2,8 +2,91 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-  <title>Caminhos de Memória</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Caminhos de Memória — RPG Educativo sobre História Africana e Afro-Brasileira</title>
+
+  <!-- Metadados Principais de SEO -->
+  <meta name="description" content="Explore 7 eras históricas em um RPG pixel art gratuito e educativo pela história dos povos africanos, diáspora atlântica, quilombos e consciência negra no Brasil.">
+  <meta name="keywords" content="Caminhos de Memória, RPG educativo, história africana, história afro-brasileira, 20 de novembro, consciência negra, Lei 10.639, Quilombo dos Palmares, Reino de Oyó, Kemet, jogo pixel art, Odirixi LTDA">
+  <meta name="author" content="Odirixi LTDA — Isaque Lima e Jordan Mayron">
+  <meta name="creator" content="Odirixi LTDA">
+  <meta name="publisher" content="Odirixi LTDA">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  <meta name="language" content="pt-BR">
+  <meta name="application-name" content="Caminhos de Memória">
+  <meta name="theme-color" content="#2b1a3d">
+  <meta name="color-scheme" content="light dark">
+
+  <!-- Open Graph / Redes Sociais (WhatsApp, Facebook, LinkedIn, Discord) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Caminhos de Memória">
+  <meta property="og:title" content="Caminhos de Memória — RPG Educativo de Exploração Histórica">
+  <meta property="og:description" content="Viaje por 7 eras históricas — da África Pré-Colonial e Kemet ao Quilombo dos Palmares e o 20 de Novembro — nesta experiência interativa em pixel art.">
+  <meta property="og:image" content="assets/og-cover.svg">
+  <meta property="og:image:type" content="image/svg+xml">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Arte pixelada de Caminhos de Memória com pôr do sol sobre a savana africana">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Caminhos de Memória — RPG Educativo de Exploração Histórica">
+  <meta name="twitter:description" content="Explore 7 eras históricas da África e da diáspora afro-brasileira neste RPG pixel art gratuito direto no navegador.">
+  <meta name="twitter:image" content="assets/og-cover.svg">
+  <meta name="twitter:image:alt" content="Caminhos de Memória — RPG Pixel Art Educativo">
+
+  <!-- Ícone da Aba (Favicon Pixel Art) -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/favicon.svg">
+
+  <!-- Dados Estruturados Schema.org (VideoGame + LearningResource) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["VideoGame", "LearningResource"],
+    "name": "Caminhos de Memória",
+    "alternateName": "Caminhos de Memória RPG",
+    "description": "Um RPG educativo de exploração em pixel art pela história dos povos africanos e afrodescendentes, percorrendo 7 eras históricas com rigor bibliográfico, desafios simbólicos e um Livro de Memórias interativo.",
+    "inLanguage": "pt-BR",
+    "genre": ["Educational", "Role-Playing", "Adventure"],
+    "gamePlatform": ["Web Browser", "Desktop", "Mobile"],
+    "operatingSystem": "Any (HTML5)",
+    "applicationCategory": "Game",
+    "playMode": "SinglePlayer",
+    "isAccessibleForFree": true,
+    "educationalUse": ["Ensino de História", "História e Cultura Afro-Brasileira e Africana", "Educação Antirracista"],
+    "audience": {
+      "@type": "EducationalAudience",
+      "educationalRole": ["student", "teacher"]
+    },
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Isaque Lima",
+        "jobTitle": "Desenvolvimento"
+      },
+      {
+        "@type": "Person",
+        "name": "Jordan Mayron",
+        "jobTitle": "Idealização"
+      }
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Odirixi LTDA"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "BRL",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <!-- Fontes Pixel Art e Folha de Estilos -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Press+Start+2P&display=swap">
@@ -256,5 +339,23 @@
   <script src="js/world.js"></script>
   <script src="js/ui.js"></script>
   <script src="js/main.js"></script>
+
+  <noscript>
+    <main style="max-width:720px;margin:24px auto;padding:20px;background:#fbf5e8;color:#2b1d16;border:3px solid #2b1d16;font-family:sans-serif">
+      <h1>Caminhos de Memória — RPG Educativo de Exploração Histórica</h1>
+      <p><strong>Caminhos de Memória</strong> é um RPG educativo em pixel art produzido pela <strong>Odirixi LTDA</strong> (desenvolvimento de Isaque Lima e idealização de Jordan Mayron), dedicado à história dos povos africanos e afrodescendentes.</p>
+      <h2>As 7 Eras Históricas</h2>
+      <ul>
+        <li><strong>África Pré-Colonial:</strong> Reinos africanos, manuscritos de Tombuctu e metalurgia do ferro.</li>
+        <li><strong>Kemet:</strong> O Egito antigo no vale do Nilo, escribas e relações com o Reino de Kush.</li>
+        <li><strong>Reino de Oyó:</strong> Organização política iorubá, sistema de Ifá, orixás e mercados liderados por mulheres.</li>
+        <li><strong>Travessia Atlântica:</strong> O tráfico transatlântico, laços de malungos e o Cais do Valongo.</li>
+        <li><strong>Brasil Colonial:</strong> Engenhos de açúcar em Pernambuco e as Irmandades de Nossa Senhora do Rosário.</li>
+        <li><strong>Quilombo:</strong> Quilombo dos Palmares, Serra da Barriga, Dandara e comunidades quilombolas atuais.</li>
+        <li><strong>Brasil Pós-Abolição:</strong> Pós-13 de maio de 1888, Luís Gama, Maria Firmina dos Reis, Abdias Nascimento, Lélia Gonzalez e o 20 de Novembro.</li>
+      </ul>
+      <p>Ative o JavaScript no seu navegador para explorar os mapas e jogar.</p>
+    </main>
+  </noscript>
 </body>
 </html>
