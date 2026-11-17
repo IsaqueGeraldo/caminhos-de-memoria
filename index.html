@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Caminhos de Memória</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Press+Start+2P&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Sprite Global de Ícones Pixel Art Padronizados (Grade 16x16, crispEdges) -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="px-play" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <path fill="currentColor" d="M4 2h2v2h2v2h2v1h2v2h-2v1H8v2H6v2H4V2z"/>
+    </symbol>
+    <symbol id="px-prev" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <path fill="currentColor" d="M10 2h2v2h-2v2H8v1H6v2h2v1h2v2h2v2h-2v-2H8v-2H6V9H4V7h2V5h2V3h2V2z"/>
+    </symbol>
+    <symbol id="px-next" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <path fill="currentColor" d="M4 2h2v1h2v2h2v2h2v2h-2v2H8v2H6v1H4v-2h2v-2h2V9h2V7H8V5H6V4H4V2z"/>
+    </symbol>
+    <symbol id="px-back" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <path fill="currentColor" d="M6 2h2v2H6v1h6v2h2v5h-2v2H6v-2h6V7H6v1h2v2H6V8H4V7H2V5h2V4h2V2z"/>
+    </symbol>
+    <symbol id="px-close" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <path fill="currentColor" d="M2 2h2v2h2v2h4V4h2V2h2v2h-2v2h-2v4h2v2h2v2h-2v-2h-2v-2H6v2H4v2H2v-2h2v-2h2V6H4V4H2V2z"/>
+    </symbol>
+    <symbol id="px-home" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <path fill="currentColor" d="M7 1h2v2h2v2h2v2h2v2h-2v6H9v-4H7v4H3V9H1V7h2V5h2V3h2V1z"/>
+    </symbol>
+    <symbol id="px-map" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <path fill="currentColor" d="M1 2h4v11H1V2zm5 1h4v11H6V3zm5-1h4v11h-4V2zM3 4v7h1V4H3zm4 1v7h2V5H7zm5-1v7h1V4h-1z"/>
+    </symbol>
+    <symbol id="px-book" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <path fill="currentColor" d="M1 2h6v1h2V2h6v11H9v1H7v-1H1V2zm2 2v7h4V4H3zm6 0v7h4V4H9z"/>
+    </symbol>
+    <symbol id="px-cog" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <path fill="currentColor" d="M6 1h4v2h2v1h1v2h2v4h-2v2h-1v1h-2v2H6v-2H4v-1H3v-2H1V6h2V4h1V3h2V1zm0 5v4h4V6H6z"/>
+    </symbol>
+    <symbol id="px-gps" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <path fill="currentColor" d="M5 1h6v2h2v5h-2v3H9v2H7v-2H5V8H3V3h2V1zm2 3v3h2V4H7z"/>
+    </symbol>
+    <symbol id="px-check" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <path fill="currentColor" d="M12 3h2v2h-2v2h-2v2H8v2H6v2H4v-2H2V9h2v2h2V9h2V7h2V5h2V3z"/>
+    </symbol>
+    <symbol id="px-lock" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <path fill="currentColor" d="M5 2h6v2h1v3h2v7H2V7h2V4h1V2zm1 2v3h4V4H6zm1 5v3h2V9H7z"/>
+    </symbol>
+    <symbol id="px-star" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <path fill="currentColor" d="M7 1h2v4h5v2h-3v2h1v4H9v-2H7v2H4V9h1V7H2V5h5V1z"/>
+    </symbol>
+    <symbol id="px-portal" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <path fill="currentColor" d="M4 1h8v2h2v10h-2v2H4v-2H2V3h2V1zm2 3v8h4V4H6zm1 2h2v4H7V6z"/>
+    </symbol>
+    <symbol id="px-warn" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <path fill="currentColor" d="M7 1h2v2h2v3h2v4h2v4H1v-4h2V6h2V3h2V1zm0 4v4h2V5H7zm0 6v2h2v-2H7z"/>
+    </symbol>
+    <symbol id="px-list" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <path fill="currentColor" d="M2 3h2v2H2V3zm4 0h8v2H6V3zM2 7h2v2H2V7zm4 0h8v2H6V7zm-4 4h2v2H2v-2zm4 0h8v2H6v-2z"/>
+    </symbol>
+    <symbol id="px-sound" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <path fill="currentColor" d="M6 2h2v12H6v-2H4v-2H2V6h2V4h2V2zm4 2h2v2h-2V4zm2 3h2v2h-2V7zm-2 3h2v2h-2v-2z"/>
+    </symbol>
+    <symbol id="px-reset" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <path fill="currentColor" d="M4 2h8v2h2v4h-2V4H6v2h2v2H3V3h1V2zm-2 6h2v4h6v-2H8V8h5v5h-1v1H4v-2H2V8z"/>
+    </symbol>
+    <symbol id="px-source" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <path fill="currentColor" d="M3 1h10v2h1v11H4v1H2V3h1V1zm2 3v2h6V4H5zm0 4v2h6V8H5zm0 4v1h4v-1H5z"/>
+    </symbol>
+    <symbol id="px-fs" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <path fill="currentColor" d="M1 1h5v2H3v3H1V1zm9 0h5v5h-2V3h-3V1zM1 10h2v3h3v2H1v-5zm12 0h2v5h-5v-2h3v-3z"/>
+    </symbol>
+    <symbol id="px-fs-exit" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <path fill="currentColor" d="M4 1h2v5H1V4h3V1zm6 0h2v3h3v2h-5V1zM1 10h5v5H4v-3H1v-2zm9 0h5v2h-3v3h-2v-5z"/>
+    </symbol>
+  </svg>
+
+  <!-- Tela Inicial (Menu Principal) -->
+  <div id="title" class="on">
+    <canvas id="tcv"></canvas>
+    <div id="tCol">
+      <h1 id="logo"><span>CAMINHOS</span><span>DE MEMÓRIA</span></h1>
+      <p id="tSub">Um RPG de exploração pela história dos povos africanos e afrodescendentes</p>
+    </div>
+    <nav id="tMenu" aria-label="Menu principal">
+      <button class="mc pri" id="tPlay"><svg class="px-ic" aria-hidden="true"><use href="#px-play"/></svg><span id="tPlayTxt">Jogar</span></button>
+      <button class="mc" id="tEras"><svg class="px-ic" aria-hidden="true"><use href="#px-map"/></svg><span>Selecionar Era</span></button>
+      <button class="mc" id="tBook"><svg class="px-ic" aria-hidden="true"><use href="#px-book"/></svg><span>Livro de Memórias</span></button>
+      <button class="mc" id="tCfg"><svg class="px-ic" aria-hidden="true"><use href="#px-cog"/></svg><span>Configurações</span></button>
+      <button class="mc" id="tNew"><svg class="px-ic" aria-hidden="true"><use href="#px-reset"/></svg><span>Novo jogo</span></button>
+      <button class="mc" id="tCred"><svg class="px-ic" aria-hidden="true"><use href="#px-source"/></svg><span>Créditos</span></button>
+    </nav>
+  </div>
+
+  <!-- Aviso de Orientação Mobile -->
+  <div id="rot">
+    <div class="ph"></div>
+    <p>Gire seu dispositivo para o modo paisagem (horizontal) para jogar</p>
+    <button class="mc" id="bRotSkip" style="max-width:260px">Continuar mesmo assim</button>
+  </div>
+
+  <!-- Modal de Créditos (Item 9) -->
+  <div class="modal screen-view" id="mCred">
+    <div class="sheet cred-sheet">
+      <div class="modal-hdr">
+        <span class="hdr-spacer"></span>
+        <h2>Créditos</h2>
+        <button type="button" class="hdr-icon-btn close" id="xCr" aria-label="Fechar Créditos" data-tip="Fechar"><svg class="px-ic" aria-hidden="true"><use href="#px-close"/></svg></button>
+      </div>
+      <div class="screen-body">
+      <p class="cred-lead" style="text-align:center">Caminhos de Memória é um jogo educativo de exploração pela história dos povos africanos e afrodescendentes.</p>
+
+      <div class="cred-grid">
+        <div class="cred-card">
+          <span class="cred-role">Desenvolvimento</span>
+          <strong class="cred-name">Isaque Lima</strong>
+          <p class="cred-desc">Responsável pela implementação técnica e desenvolvimento do jogo.</p>
+        </div>
+
+        <div class="cred-card">
+          <span class="cred-role">Idealização</span>
+          <strong class="cred-name">Jordan Mayron</strong>
+          <p class="cred-desc">Responsável pela concepção das ideias, construção das narrativas e definição das histórias que compõem a experiência.</p>
+        </div>
+
+        <div class="cred-card cred-studio">
+          <span class="cred-role">Criação e Produção</span>
+          <strong class="cred-name">Odirixi LTDA</strong>
+          <p class="cred-desc">Responsável pela criação e produção do jogo.</p>
+        </div>
+      </div>
+
+      <p class="meta cred-note">O conteúdo histórico baseia-se em fontes bibliográficas e documentais verificadas, apresentadas a cada registro. Os personagens que guiam a jornada e os desafios dos portais são construções narrativas inspiradas na história e na cultura dos povos africanos e afrodescendentes.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Canvas Principal do Mapa -->
+  <canvas id="cv" aria-label="Mapa do jogo"></canvas>
+
+  <!-- HUD Superior com Botões de Ícone Padronizados -->
+  <div id="top">
+    <div class="chip">
+      <div id="mapName"></div>
+      <div id="count"></div>
+    </div>
+    <div id="hudR">
+      <div class="btns" role="toolbar" aria-label="Ações principais">
+        <button type="button" class="hud-icon-btn" id="bHome" aria-label="Menu Inicial" data-tip="Menu Inicial">
+          <svg class="px-ic" aria-hidden="true"><use href="#px-home"/></svg>
+        </button>
+        <button type="button" class="hud-icon-btn" id="bMaps" aria-label="Mapas e Eras (M)" data-tip="Mapas (M)">
+          <svg class="px-ic" aria-hidden="true"><use href="#px-map"/></svg>
+        </button>
+        <button type="button" class="hud-icon-btn" id="bBook" aria-label="Livro de Memórias (B)" data-tip="Livro (B)">
+          <svg class="px-ic" aria-hidden="true"><use href="#px-book"/></svg>
+        </button>
+        <button type="button" class="hud-icon-btn" id="bMenu" aria-label="Configurações (Esc)" data-tip="Configurações (Esc)">
+          <svg class="px-ic" aria-hidden="true"><use href="#px-cog"/></svg>
+        </button>
+        <button type="button" class="hud-icon-btn" id="bFs" aria-label="Alternar Tela Cheia (F)" data-tip="Tela Cheia (F)">
+          <svg class="px-ic" aria-hidden="true"><use id="uFsIcon" href="#px-fs"/></svg>
+        </button>
+      </div>
+      <canvas id="mini" aria-label="Minimapa (toque para abrir GPS)" title="Abrir GPS"></canvas>
+    </div>
+  </div>
+
+  <!-- Notificações (Toast) -->
+  <div id="toast"></div>
+
+  <!-- Caixa de Diálogo -->
+  <div id="dlg" class="l" role="dialog" aria-live="polite">
+    <canvas id="pL" class="pt" width="16" height="16"></canvas>
+    <div id="dBox">
+      <div id="dWho"></div>
+      <div id="dTag"></div>
+      <div id="dSay"></div>
+      <div id="dNext">toque ou Espaço <svg class="px-ic sm" aria-hidden="true"><use href="#px-next"/></svg></div>
+    </div>
+    <canvas id="pR" class="pt" width="16" height="16"></canvas>
+  </div>
+
+  <!-- Controles Touch (Mobile) -->
+  <div id="ctl">
+    <div id="joy" aria-label="Direcional"><div id="knob"></div></div>
+    <button id="btnA" aria-label="Falar ou ler">A</button>
+  </div>
+
+  <!-- Dica de Atalhos (Desktop) -->
+  <div id="hint">WASD andar (Shift corre) · Setas navegar interface · Espaço interagir · B Livro · M Mapas · Esc Config</div>
+
+  <!-- Modais do Sistema -->
+  <div class="modal screen-view" id="mBook"><div class="sheet" id="book"></div></div>
+  <div class="modal screen-view" id="mMaps"><div class="sheet" id="maps"></div></div>
+  <div class="modal screen-view" id="mIntro">
+    <div class="sheet">
+      <div class="modal-hdr">
+        <span class="hdr-spacer"></span>
+        <h2>Caminhos de Memória</h2>
+        <span class="hdr-spacer"></span>
+      </div>
+      <div class="screen-body" style="max-width:600px;text-align:center">
+      <p>Você prepara a exposição do 20 de novembro. Para montá-la, entra em portais de memória e reúne no Arquivo o que aprende em cada lugar.</p>
+      <p class="meta">O passado não muda: você observa, lê, enfrenta os desafios simbólicos de cada portal e conecta os registros. Os fatos vêm de fontes; personagens-síntese são fictícios.</p>
+      <div class="modal-nav-row" style="margin-top:20px">
+        <button class="mc" id="xIHome"><svg class="px-ic" aria-hidden="true"><use href="#px-home"/></svg><span>Menu Inicial</span></button>
+        <button class="mc pri" id="xI"><svg class="px-ic" aria-hidden="true"><use href="#px-play"/></svg><span>Começar jornada</span></button>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal screen-view" id="mBoss"><div class="sheet" id="boss"></div></div>
+  <div class="modal screen-view" id="mMenu"><div class="sheet" id="menu"></div></div>
+  <div class="modal screen-view" id="mGps"><div class="sheet" id="gps"></div></div>
+
+  <!-- Modal de Confirmação: Retornar ao Menu Inicial -->
+  <div class="modal dialog-modal" id="mConfirmHome">
+    <div class="sheet" style="max-width:460px;text-align:center">
+      <h2>Voltar ao Menu Inicial?</h2>
+      <p>Seu progresso (registros descobertos, selos e conexões) já está salvo automaticamente.</p>
+      <p class="meta">Se você estiver no meio de um desafio de portal não concluído, a rodada atual do desafio será reiniciada ao sair.</p>
+      <div class="modal-nav-row" style="margin-top:16px">
+        <button class="mc" id="bCancelHome"><svg class="px-ic" aria-hidden="true"><use href="#px-play"/></svg><span>Continuar jogando</span></button>
+        <button class="mc pri" id="bConfirmHome"><svg class="px-ic" aria-hidden="true"><use href="#px-home"/></svg><span>Ir para o Menu Inicial</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Confirmação: Novo Jogo / Reinício de Progresso (Item 8) -->
+  <div class="modal dialog-modal" id="mConfirmNew" role="alertdialog" aria-labelledby="newGameTitle" aria-describedby="newGameDesc">
+    <div class="sheet danger-sheet" style="text-align:center">
+      <div class="danger-badge"><svg class="px-ic sm" aria-hidden="true"><use href="#px-warn"/></svg><span>AÇÃO IRREVERSÍVEL</span></div>
+      <h2 id="newGameTitle" style="text-align:center">Iniciar Novo Jogo?</h2>
+      <p id="newGameDesc">Iniciar uma nova partida <strong>apagará permanentemente todo o progresso existente</strong>.</p>
+      <ul class="danger-list" style="text-align:left">
+        <li>Todos os registros históricos descobertos no Livro serão reiniciados;</li>
+        <li>Todos os Selos de Era e desafios de portal vencidos serão apagados;</li>
+        <li>Todas as conexões resolvidas retornarão ao estado inicial.</li>
+      </ul>
+      <div class="modal-nav-row" style="margin-top:18px">
+        <button class="mc" id="bCancelNew"><svg class="px-ic" aria-hidden="true"><use href="#px-close"/></svg><span>Cancelar</span></button>
+        <button class="mc danger" id="bConfirmNew"><svg class="px-ic" aria-hidden="true"><use href="#px-reset"/></svg><span>Apagar e Iniciar</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Indicador de Ação Contextual -->
+  <div id="ipt"></div>
+
+  <!-- Módulos JavaScript Desacoplados -->
+  <script src="js/data-fallback.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/world.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
